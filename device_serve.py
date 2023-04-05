@@ -26,7 +26,7 @@ app = Flask(__name__)
 requests_queue = Queue()
 
 """
-curl --header "Content-Type: application/json" \
+curl --header "Content-Type: text/plain" \
   --request POST \
   --data '{"context":"eleutherai", "top_p": 0.9, "temp": 0.75}' \
   http://localhost:5000/complete
