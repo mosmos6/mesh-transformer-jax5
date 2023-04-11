@@ -51,7 +51,7 @@ def complete():
     if request.method == "OPTIONS":  # CORS preflight
         return _build_cors_prelight_response()
     elif request.method == "POST":  # The actual request following the preflight
-        content = json.loads(request.content)
+        content = json.loads(request.data)
 
         if requests_queue.qsize() > 100:
             return {"error": "queue full, try again later"}
